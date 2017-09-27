@@ -21,7 +21,6 @@ nonce=0
 
 
 prefix=`for i in $(seq $difficulty); do echo -n '0'; done`
-echo $prefix
 while true; do 
     string=$transaction",nonce="$nonce
     hash=`echo $string|openssl dgst -sha256|openssl dgst -sha256|awk -F" " '{print $2}'`
